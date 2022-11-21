@@ -5,7 +5,8 @@ const menuBurger = document.querySelector('.menu');
 const dropdownLeft = document.querySelector('.mobile-menu');
 //Aquí hacia abajo traigo las etiquetas del carrito de compras y su funcionalidad
 const seeShoppingCart = document.querySelector('.navbar-shopping-cart');
-const toggleProductDetail = document.querySelector('.product-detail');
+const toggleProductDetail = document.querySelector('.product-detail-menu');
+//Es el subcontenedor de la lista de productos.
 const containCards = document.querySelector('.cards-container');
 
 
@@ -70,6 +71,21 @@ productArray.push({
 	name: 'Portatil gammer',
 	price: 1000,
 	image: 'https://corporativo.tecnoplaza.com.co/wp-content/uploads/2019/07/Portatil-Asus-ROG-Gamer-G7311--600x600.jpg',
+});
+productArray.push({
+	name: 'TV pantalla plana',
+	price: 3000,
+	image: 'https://colombia.com.co/wp-content/uploads/2021/09/Televisor-Samsung-LED-43-Crystal-Processor-4K-Smart-TV-Pantalla-Plana-1.jpg',
+});
+productArray.push({
+	name: 'Sofa cama',
+	price: 550,
+	image: 'https://cdn-cakgm.nitrocdn.com/puxFnIBkkLcpyPRyaLnwbtejpBwTawZN/assets/static/optimized/rev-13bea33/wp-content/uploads/2020/12/1-Sofa-Cama-Piccolo-1.jpg',
+});
+productArray.push({
+	name: 'Cama plegable',
+	price: 1500,
+	image: 'https://i.pinimg.com/originals/24/a8/2d/24a82d0de971e2ac4a615aca15a0d452.jpg',
 });
 
 
