@@ -8,6 +8,10 @@ const seeShoppingCart = document.querySelector('.navbar-shopping-cart');
 const toggleProductDetail = document.querySelector('.product-detail-menu');
 //Es el subcontenedor de la lista de productos.
 const containCards = document.querySelector('.cards-container');
+//Esta es la variable que traerá mi etiqueta padre del detalle de cada producto.
+const seeProductsDetails = document.querySelector('.product-detail-detalles');
+//Esta variable trae el boton de "x" de mi cuadro de información de producto.
+const closeProduct = document.querySelector('.product-detail-close');
 
 
 
@@ -16,6 +20,8 @@ navbarDropdown.addEventListener('click', toggleDesktopMenu);
 menuBurger.addEventListener('click', toggleBurgerMenu);
 //evento creado para hacer click en el carrito de compras.
 seeShoppingCart.addEventListener('click', toggleShoppingCart);
+//Evento que al darle click a la "x" me cierre el detalle del producto.
+closeProduct.addEventListener('click', closeProductDetail);
 
 
 
@@ -30,6 +36,7 @@ function toggleDesktopMenu(){
 
 	if(hideView == false){
 		toggleProductDetail.classList.add('hide');
+		seeProductsDetails.classList.add('hide');
 	}
 }
 //Esta funcion lo que hace es con un click abrir y cerrar el menu de la hamburguesa izquierdo.
@@ -40,6 +47,7 @@ function toggleBurgerMenu(){
 
 	if(hideView == false){
 		toggleProductDetail.classList.add('hide');
+		seeProductsDetails.classList.add('hide');
 	}
 }
 //Esta funcion lo que hace es con un click abrir y cerrar el icono del carrito de compras derecho.
@@ -51,7 +59,23 @@ function toggleShoppingCart(){
 	if(hideView == false){
 		dropdownLeft.classList.add('hide');
 		menuTop.classList.add('hide');
+		seeProductsDetails.classList.add('hide');
 	}
+}
+//Esta es la función que hará que aparezca y desaparezca con un click la infoprmación de mi producto.
+function seeImage(){
+	seeProductsDetails.classList.remove('hide');
+
+	const hideView = seeProductsDetails.classList.contains('hide');
+
+	if(hideView == false){
+		toggleProductDetail.classList.add('hide');
+		menuTop.classList.add('hide');
+	}
+}
+//En esta función vamos a hacer que al darle click al boton de la "x" de mi imagen, la imagen se cierre.
+function closeProductDetail(){
+	seeProductsDetails.classList.add('hide');
 }
 
 
@@ -98,6 +122,8 @@ function seeProducts(arrSee){
 		//vamos a crear la etiqueta de la imagen principal que representará el producto.
 		const productImage = document.createElement('img');
 		productImage.setAttribute('src', product.image);
+
+		productImage.addEventListener('click', seeImage);
 	
 		//Vamos a crear el contenedor div de la información del producto y del icono verde derecho inferior.
 		const productInfo = document.createElement('div');

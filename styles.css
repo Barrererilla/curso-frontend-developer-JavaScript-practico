@@ -126,12 +126,12 @@
 
   /* Este en el menu hamburguesa desplegable del lado izquierdo en tamaño movil */
   .mobile-menu {
-	padding: 24px;
+	padding: 24px 0 0 24px;
 	position: absolute;
 	top: 60.5px;
 	left: 0;
 	background-color: var(--white);
-	width: 100%;
+	width: calc(100% - 24px);
   }
   .mobile-menu a {
 	text-decoration: none;
